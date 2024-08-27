@@ -1,0 +1,311 @@
+@font-face {
+    font-family: 'Archivo Black';
+    src: url(./fonts/archivo-black.regular.ttf);
+}
+
+@font-face {
+    font-family: 'Karla';
+    src: url(./fonts/Karla-Regular.ttf);
+}
+
+:root{
+    --bg-color: hsl(345, 72%, 85%);
+    --sign-part: hsl(6, 38%, 95%);
+    --side-part: hsl(357, 67%, 94%);
+    --button-hover: hsl(343, 77%, 76%);
+    --button: hsl(343, 73%, 69%);
+    --greyish-pink: hsl(307, 4%, 58%);
+    --main-text: hsl(0, 4%, 16%);
+    --white: hsl(0, 0%, 100%);
+
+    --weak: hsl(0, 79%, 72%);
+    --medium: hsl(20, 100%, 75%);
+    --strong: hsl(101, 50%, 84%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+}
+
+.top p,
+.form span,
+.passStrength p,
+.side p,
+.login p,
+input,
+button,
+.error{
+    font-family: 'Karla';
+}
+
+.name span,
+.email span, 
+.password span,
+.consent span,
+.login p{
+    color: var(--greyish-pink);
+}
+
+.top h3,
+.side h3,
+.side h2{
+    font-family: 'Archivo Black';
+}
+
+
+body{
+    background-color: var(--bg-color);
+    display: grid;
+    place-items: center;
+}
+.container{
+    width: 600px;
+    height: 500px;
+    background-color: var(--side-part);
+    border-radius: 10px;
+}
+
+.sign{
+    max-width: 300px;
+    padding: 2.5rem;
+    border-radius: 15px;
+    background-color: var(--sign-part);
+    float: left;
+    height: 100%;
+}
+
+.top{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.top p{
+    color: var(--greyish-pink);
+    font-weight: 100;
+    font-size: 0.6rem;
+}
+
+.top h3{
+    color: var(--main-text);
+    font-weight: 400;
+}
+
+.form{
+    margin-top: 2.5rem;
+}
+
+.form .name input,
+.form .email input,
+.form .password input{
+    height: 27px;
+    width: 100%;
+    margin: 5px 0;
+    box-sizing: border-box;
+    background-color: var(--sign-part);
+    border: none;
+    border-bottom: 1px solid var(--greyish-pink);
+    outline: none;
+    font-weight: 900;
+}
+
+
+.name span,
+.email span,
+.password span,
+.passStrength p,
+.consent span,
+.login p,
+.side p{
+    font-size: 0.6rem;
+}
+
+
+
+#hide,
+#show{
+    position: relative;
+    float: right;
+    bottom: 25px;
+    height: 15px;
+    cursor: pointer;
+}
+
+#hide{
+    display: none;
+}
+
+.active #hide{
+    display: initial;
+}
+
+.active #show{
+    display: none;
+}
+
+#text{
+    margin-bottom: 10px;
+    visibility: hidden;
+}
+.indicator{
+    height: 5px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    visibility: hidden;
+}
+
+.indicator span{
+    width: 4rem;
+    height: 100%;
+    background: var(--greyish-pink);
+    border-radius: 5px;
+    position: relative;
+}
+
+
+.indicator span::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--greyish-pink);
+    border-radius: 5px;
+}
+.weak::before,
+.medium::before,
+.strong::before{
+    background: var(--greyish-pink);
+    transition: all 0.2s ease;
+}
+
+.active.weak::before{
+    background-color: var(--weak);
+}
+
+.active.medium::before{
+    background-color: var(--medium);
+}
+
+.active.strong::before{
+    background-color: var(--strong);
+}
+.active.weak::before,
+.active.medium::before,
+.active.strong::before{
+    transition: all 0.2s ease;
+}
+
+.consent{
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 5px;
+    line-height: 0.5rem;
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+.consent input{
+    cursor: pointer;
+    z-index: 1;
+}
+
+.consent input:checked{
+    opacity: 0;
+}
+
+.consent #checkbox-icon{
+    position: absolute;
+    height: 12px;
+}
+
+.register{
+    margin: 20px 0;
+    height: 30px;
+}
+
+.register button{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--button);
+    color: var(--white);
+    transition: all 0.2s ease;
+}
+
+.register button:hover{
+    background-color: var(--button-hover);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.login{
+    text-align: center;
+}
+
+
+.side{
+    max-width: 300px;
+    padding: 1rem;
+    border-radius: 15px;
+    float: right;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    margin-top: 7rem;
+}
+
+#pc-icon{
+    height: 10rem;
+    margin: 0 1.5rem;
+}
+
+.side h3{
+    color: var(--greyish-pink);
+    font-size: 0.8rem;
+}
+
+.side p{
+    color: var(--greyish-pink);
+    font-size: 0.6rem;
+    margin-top: 10px;
+}
+
+.error{
+    color: var(--weak);
+    font-size: 0.6rem;
+ }
+
+@media (max-width: 430px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+        width: 90vw;
+        background-color: transparent;
+    }
+
+    .side{
+        display: none;
+
+    }
+    .sign{
+        max-width: 90vw;
+        width: 100%;
+    }
+}

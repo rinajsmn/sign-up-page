@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Sign up Page</title>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="sign">
+
+            <div class="top">
+                <p>Create an account to continue</p>
+                <h3>Getting Started</h3>
+            </div>
+
+            <div class="form">
+                <form action="#">
+
+                    <div class="name">
+                        <label for="name"><span>Full name</span></label>
+                        <input type="text" name="name" id="name" autocomplete="on">
+                        <div class="error"></div>
+                    </div>
+
+                    <div class="email">
+                        <label for="email"><span>Email address</span></label>
+                        <input type="email" name="email" id="email" autocomplete="on">
+                        <div class="error"></div>
+                    </div>
+
+                    <div class="password">
+                        <label for="password"><span>Password</span></label>
+                        <input type="password" name="password" id="password" onkeyup='passShow()'>
+                            <div class="showBtn">
+                                <img src="./design/icons/show.png" alt="show" id="show">
+                                 <img src="./design/icons/hide.png" alt="hide" id="hide">
+                            </div>
+                        <div class="error"></div>
+                    </div>
+
+                    <div class="passStrength">
+                        <p id="text">Password Strength</p>
+
+                        <div class="indicator">
+                            <span class="weak"></span>
+                            <span class="medium"></span>
+                            <span class="strong"></span>
+                        </div>
+                        
+                    </div>
+
+                    <div class="consent">
+                        <input type="checkbox" name="checkbox" id="checkbox">
+                        <label for="checkbox"><span>By creating an account, you agree to our <a href="#">Term and Conditions</a></span></label>
+                        <img src="./design/icons/checkbox.png" alt="checkbox" id="checkbox-icon">
+                        <div class="error"></div>
+                    </div>
+
+                    <div class="register">
+                        <button type="submit">Register</button>
+                    </div>
+
+                    <div class="login">
+                        <p>Already have an account? <a href="#">Login</a></p>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+        <div class="side">
+            <img src="./design/icons/computer.png" alt="computer" id="pc-icon">
+            <h3>ALL-IN-ONE</h3>
+            <h2>Composable Cloud</h2>
+            <p>Modular compute, storage, and networking components paired with the cloud virtualization software to create pools of IT resources</p>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
